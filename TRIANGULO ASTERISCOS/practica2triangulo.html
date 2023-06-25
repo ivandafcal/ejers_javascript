@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica2triangulo</title>
+    <style> *{font-family:monospace;}
+    </style>
+</head>
+<body>
+    <script>
+        let n; //guardamos el valor del usuario
+        do{
+            n = prompt("Escribe los asteriscos que quieras"+"(debe ser un numero entero positivo)");
+        }while(isNaN(Number(n)) || n<=0); //funcion is not a number, asegurando que lo pone en numero por si acaso el usuario pone un string
+
+        for(let i=1;i<=n;i++){ //bucle que recorre las filas
+          for(let j=1;j<=i;j++){ //bucle que recorre las columnas
+            document.write("*")
+          }
+          document.write("<br>");
+        }
+
+    </script>
+</body>
+</html>

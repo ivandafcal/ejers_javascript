@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrimestralPalindromo</title>
+    <style> *{font-family:monospace;}
+    </style>
+</head>
+<body>
+    <script>
+
+    function palindromo (n){ //invocamos funcion palindromo con parametro n
+    let fraseModif = n.toLowerCase().split(" ").join(""); //hacemos todo a minusculas para que no distinga, al igual con espacios 
+    let frase = fraseModif.split(""); //variable let frase igualamos a frase modificada para comparar ambas
+    let arrayNuevo = []; //iniciamos un nuevo array para poder hacer el bucle y en sentido contrario
+
+    for(i = frase.length; i > 0; i--){ //recorremos la frase caracter por caracter ambos sentidos
+        arrayNuevo.push(frase[i-1]); //hacemos el push para meter la nueva frase modificada al nuevo array
+    }
+    return frase.join("") === arrayNuevo.join(""); //con el join combinamos basandonos en un campo en comun,devuelve comparacion ambos sentidos
+    }
+
+    console.log(palindromo(prompt("Dime un texto y te digo si es palindromo"))); // aqui la frase que te pide el navegador y devuelve true o false en la consola
+    </script>
+</body>
+</html>

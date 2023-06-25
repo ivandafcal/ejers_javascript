@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raton</title>
+	<style>
+		#aviso {
+			position: absolute;
+			display: none;
+			width: 80px;
+			height: 40px;
+			background-color: red;
+			color: white;
+			text-align: center;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="aviso">Raton</div>
+    <p>La historia de España engloba el período comprendido desde la primera colonización humana en la prehistoria en la península ibérica hasta la actualidad. La formación del Estado español inicia a finales de la Edad Media con la unión o invasión (caso de Navarra y Granada) de los reinos que acabarán formando Castilla, León, Aragón, Navarra y Granada.</p>
+	<br>
+    <p>El 13 de septiembre de 1923 el capitán general de Cataluña, Miguel Primo de Rivera, se subleva contra el Gobierno y da un golpe de Estado con el apoyo de la mayoría de las unidades militares. La reunión prevista de las Cortes Generales para fechas inmediatamente posteriores con el objetivo de analizar el problema de Marruecos y el papel del ejército en la contienda fue el detonante último de la sublevación. A esta situación se une una grave crisis del sistema monárquico que no acaba de encajar en un siglo xx marcado por la revolución industrial acelerada, un papel no reconocido a la burguesía, tensiones nacionalistas y unos partidos políticos tradicionales incapaces de afrontar un régimen democrático pleno.</p>
+    <br>
+    <p>El 17 de julio de 1936, el general Francisco Franco dirigió el Ejército Español de África hacia la península, mientras que otro ejército desde el norte al mando del general Mola se trasladó al sur de Navarra. Las unidades militares se movilizaron también en otros lugares para hacerse cargo de las instituciones gubernamentales. El movimiento de Franco tenía la intención de hacerse con el poder de inmediato, pero la exitosa resistencia de los republicanos en lugares como Madrid, Barcelona, Valencia, Málaga y el País Vasco, significó el comienzo de una guerra civil cruel, fratricida y prolongada. En poco tiempo, gran parte del sur y el oeste estaba bajo el control del ejército sublevado, cuyas fuerzas de África constituían la tropa más profesional del conflicto. Ambas partes recibieron la ayuda militar extranjera, los sublevados de la Alemania nazi, la Italia fascista y de la dictadura de Portugal, mientras que el ejército popular republicano fue ayudado por la Unión de Repúblicas Socialistas Soviéticas (URSS), México liderado por Lázaro Cárdenas del Río presidente del Partido de la Revolución Mexicana, y las Brigadas internacionales, constituidas por socialistas, comunistas y anarquistas llegados desde diferentes países del mundo.
+        El asedio del Alcázar de Toledo en los comienzos de la guerra supuso un punto de inflexión. Los republicanos consiguieron resistir en Madrid, a pesar del asalto nacional en noviembre de 1936, y frustraron ofensivas posteriores como en las batallas del Jarama y Guadalajara en 1937.
+        Pronto, sin embargo, los nacionales comenzaron a penetrar en el territorio republicano, haciendo incursiones en el este. El norte peninsular fue ocupado a finales de 1937 y el frente de Aragón republicano se derrumbó poco después. </p>El bombardeo de Guernica supuso el ataque aéreo a civiles más cruel de la guerra, siendo perpetrado por la Legión Cóndor de la Luftwaffe alemana.
+        La batalla del Ebro en julio y noviembre de 1938 fue el último intento desesperado de los republicanos para cambiar el rumbo de la guerra. Cuando cayó Barcelona en manos de los nacionales a principios de 1939, la guerra quedó decidida. <p>Los frentes republicanos restantes se derrumbaron y Madrid fue tomada en marzo de 1939. La guerra, que costó entre 300 000 y 1 000 000 de vidas, puso fin a la República dando paso a la dictadura de Francisco Franco.</p>
+    <p>La conducción de la guerra fue encarnizada en ambos bandos, con asesinatos y fusilamientos sumarios de civiles, eclesiásticos y prisioneros por nacionales y republicanos. Tras la guerra, miles de republicanos fueron represaliados o encarcelados en campos de concentración, y muchos otros partieron hacia el exilio.</p>
+    <br>
+    <p>Durante el régimen de Franco, España buscó activamente la devolución de Gibraltar por el Reino Unido, y ganó algo de apoyo para su causa en las Naciones Unidas. Durante la década de 1960, España comenzó a imponer restricciones sobre Gibraltar, que culminó con el cierre de la frontera en 1969. No se volvió a abrir por completo hasta 1985. El dominio español en Marruecos terminó en 1967. A pesar de la victoria militar en la invasión marroquí de 1957-1958 al África Occidental Española, España poco a poco renunció a sus colonias africanas restantes. Se concedió la independencia a Guinea Española, que se convertiría en Guinea Ecuatorial en 1968 y con la que se desarrollaría una aguda crisis diplomática apenas un año más tarde, mientras que el enclave marroquí de Ifni había sido cedido a Marruecos en 1969. Ese mismo año se iniciaría el cierre de la verja de Gibraltar, quedando cerrada la frontera hispano-británica en Gibraltar durante décadas.</p>
+    <script>
+        //Realizo el evento en sí con la funcion dblclick, le pongo coordenadas para que localice donde pulso con el raton
+		document.addEventListener("dblclick", function(ev) {
+			var cartel = document.getElementById("aviso");
+			cartel.style.left = (ev.pageX - 50) + "px";
+			cartel.style.top = (ev.pageY - 25) + "px";
+			cartel.style.display = "block";
+			
+            //Le pongo un setTimeout para que desaparezca despues de 3 segundos, suficiente para ver que sale
+            setTimeout(function() {
+				cartel.style.display = "none";
+			}, 3000);
+		});
+	</script>
+</body>
+</html>

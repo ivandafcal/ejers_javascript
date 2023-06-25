@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones pares,primos</title>
+    <script src="primo.js"></script>
+</head>
+<body>
+    <script>
+
+  /*console.log(par(5));*/     
+  //El 1 y el 2 sabemos que son primos, los escribimos
+
+  document.write("<p>1</p><p>2</p>");
+  for(let i=3;i<1000;i+=2){//i=i+2, es lo mismo, que quiere decir que los pares no son primos y no se tienen en cuenta
+    if(esPrimo(i)==true)
+    document.write(`<p>${i}</p>`); //Es con tildes porque utilizamos i
+  }
+    </script>
+</body>
+</html>

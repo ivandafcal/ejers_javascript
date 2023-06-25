@@ -1,0 +1,28 @@
+video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*esto es para que el contenido se ajuste al contenedor, no se deforme las personas o lo que slaga en el vide*/
+}
+
+#info{
+    position: fixed;
+    left: calc(50%-200%px);
+    top: calc(50%-200%px);
+    width: 400px;
+    height: 100px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    display: none;
+    text-align: center;
+}
+
+.mostrar{
+    display: block !important;
+}
+    
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrimestralAleatorios</title>
+    <script src="aleatorio.js" ></script>
+</head>
+<body>
+   <script>
+
+    let arrayAleatorios = []; //declaramos el array 
+      for(let i =1; i<=20;i++){ //recorremos el array marcando la longitud de 20 numeros en este caso
+        arrayAleatorios.push(aleatorio(1, 50)); //guardamos valores aleatorios en un array
+        } 
+        
+        document.write("Listado de Aleatorios") //Encabezado para ubicar la lista creada
+        document.write("<br>");
+        document.write(arrayAleatorios); // se imprime el listado de aleatorios 
+        document.write("<br>");
+        document.write("<br>");
+         
+        for(let i=0 ; i<=arrayAleatorios.length; i++){ // recorremos el listado posicion por posicion
+
+            posicion=arrayAleatorios[i]; // definimos la posicion de todos los numeros
+            document.write("<br>");
+            document.write(posicion); //imprimimos cada uno de los números del listado
+            document.write("<br>");
+
+            for(let j = 1; j<=posicion; j++ ){  //con este bucle recorremos cada posicion y asignamos los asteriscos a cada uno
+            document.write("*"); //asteriscos asignados correspondientes a cada una de las posiciones del listado
+            }
+        }
+   </script>  
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos,contador y temporizadores</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de visitas y cambio de imagen</h1>
+    <button id="button">Cambiar imagen</button>
+    <img id="image" src="image1.jpg" alt="Imagen" width="300" height="200">
+    <p id="counter">Numero de visitas: 0 </p>
+    <script>
+        //Array de URLS de las imagenes
+        const images=['imagen1.jpg','imagen2.jpg','imagen3.jpg'];
+        //Contador de visitas
+        let visitCounter = parseInt(localStorage.getItem('visitCounter')) || 0;
+
+        //Funcion para actualizar contador de visitas
+        function updateCounter(){
+            visitCounter++;
+            document.getElementById('counter').innerText = `Numero de visitas: ${visitCounter}`;
+            localStorage.setItem('visitCounter', visitCounter);
+        }
+        //Actualizar contador de visitas al cargar la pagina
+        updateCounter();
+
+        //Cambio automatico de imagen
+        let currentImageIndex = 0;
+        const imageElement = document.getElementById('image');
+        function changeImage(){
+            currentImageIndex = (currentImageIndex+1) % images.length;
+            imageElement.src=images[currentImageIndex];
+        }
+
+        let interval = setInterval(changeImage, 3000); //cada 3 segundos se repite la accion
+        //Reiniciar intervalo cuando se recargue la pagina
+        window.addEventListener('load',()=>{
+            clearInterval(interval);
+            interval = setInterval(changeImage,3000);
+        });
+        //Evento click en boton para cambiar la imagen
+        const button = document.getElementById('button');
+        button.addEventListener('click',() =>{
+            changeImage();
+            updateCounter();
+        });
+        
+    </script>
+</body>
+</html>

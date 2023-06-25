@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controlVisitas</title>
+</head>
+<body>
+    <h1>Esta es tu visita número
+        <span id="nVisita"></span>
+    </h1>
+    <script>
+        let nVisita = localStorage.getItem("visitas");
+        let span = document.getElementById("nVisita");
+        if(!nVisita) nVisita = 1;span.textContent=nVisita; //si esta vacia (q se acaban de meter), pues empieza en 1
+        //actualizamos el contador
+        nVisita ++;
+        localStorage.setItem("visitas",nVisita);
+    </script>
+</body>
+</html>

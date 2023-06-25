@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRECUENCIAS NUMEROS</title>
+    <script src="aleatorio.js" ></script>
+</head>
+<body>
+   <script>
+
+      let arrayNumerosAleatorios = [];
+      const numeroRepeticiones = 10000;
+
+      for (let i = 1; i <= numeroRepeticiones; i++) {
+        let numero = aleatorio(1, 10);
+        arrayNumerosAleatorios.push(numero);
+        document.write(`<p> ${numero} </p>`);
+      }
+      
+      document.write(`<p> Hay ${numeroRepeticiones} números aleatorios </p>`);
+
+      for (let i = 1; i <= 10; i++) {
+        let suma = 0;
+        for (let j = 0; j < arrayNumerosAleatorios.length; j++) {
+          if (arrayNumerosAleatorios[j] === i) {
+            suma++;
+          }
+        }
+        document.write(`<p> El número ${i} se repite ${suma} veces </p>`);
+      }
+
+   </script>  
+</body>
+</html>
